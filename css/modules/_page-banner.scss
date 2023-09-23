@@ -1,0 +1,98 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.page-banner {
+  display: grid;
+  @include m.bp-sm {
+    max-height: 40vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  @include m.bp-md {
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  &__background {
+    grid-column: 1 / -1;
+    grid-row: 1 / 1;
+    display: none;
+    box-shadow: v.$shadow-light;
+    @include m.bp-sm {
+      display: block;
+      grid-row: 1 / -1;
+      background: v.$bg-primary-dark;
+    }
+    @include m.bp-md {
+      grid-row: 1 / span 3;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    color: v.$color-white;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    @include m.bp-sm {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      color: v.$color-white;
+      max-width: 114rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    @include m.bp-md {
+      grid-row: 2 / -1;
+      grid-template-rows: repeat(3, 1fr);
+      width: v.$full-width;
+      max-width: 114rem;
+      overflow: visible;
+    }
+  }
+
+  &__figure {
+    @include m.bp-md {
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__text {
+    background: v.$bg-primary;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    gap: 1.5rem;
+    padding: 5rem 2.5rem;
+    @include m.bp-sm {
+      background: none;
+      grid-column: 2 / -1;
+      align-content: start;
+      padding: 2.5rem 8rem;
+    }
+    @include m.bp-md {
+      grid-row: 1 / span 2;
+    }
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    @include m.bp-sm {
+      font-size: 3.5rem;
+    }
+    @include m.bp-md {
+      font-size: 4.5rem;
+    }
+  }
+
+  &__subheading {
+    @include m.bp-sm {
+      font-size: 2.5rem;
+    }
+    @include m.bp-md {
+      font-size: 2.7rem;
+      letter-spacing: 0.5px;
+    }
+  }
+}

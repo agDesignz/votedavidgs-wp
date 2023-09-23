@@ -1,0 +1,40 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$gap-md;
+
+  &--md {
+    @include m.bp-md {
+      flex-direction: row;
+    }
+  }
+  &--md-r {
+    @include m.bp-md {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__md-half {
+    @include m.bp-md {
+      width: 50%;
+      // padding: 0 v.$gap-sm;
+    }
+  }
+
+  &__figure {
+    @include m.bp-md {
+      width: 35%;
+      max-width: 40rem;
+    }
+  }
+
+  &__md-1 {
+    @include m.bp-md {
+      flex: 1;
+    }
+  }
+}

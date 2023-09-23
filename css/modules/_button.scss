@@ -1,0 +1,187 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.24s ease-out;
+    text-align: center;
+  }
+
+  &:active,
+  &:hover {
+    letter-spacing: 2.4px;
+  }
+
+  &--opaque {
+    &:active,
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  &--stretch {
+    justify-self: stretch;
+  }
+
+  &--large {
+    &,
+    &:link,
+    &:visited {
+      font-size: 3.5rem;
+      // padding: 1rem 2rem;
+    }
+  }
+
+  &--green {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid v.$color-secondary-dark;
+      background-color: v.$color-secondary-dark;
+      color: v.$color-white;
+      box-shadow: v.$shadow-light;
+    }
+    border: 1px solid v.$color-secondary-dark;
+    background-color: v.$color-secondary-dark;
+    color: v.$color-white;
+    box-shadow: v.$shadow-medium;
+
+    &:active,
+    &:hover {
+      box-shadow: v.$shadow-medium;
+      /* opacity: 0.85; */
+    }
+  }
+
+  &--white {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid v.$color-white;
+      background: v.$color-white;
+      color: v.$color-secondary-dark;
+      box-shadow: v.$shadow-light;
+    }
+
+    &:active,
+    &:hover {
+      /* background-color: rgba(v.$color-white, .8); */
+      box-shadow: v.$shadow-medium;
+      opacity: 0.875;
+    }
+
+    &--primary {
+      &:active,
+      &:hover {
+        color: v.$color-primary;
+      }
+    }
+  }
+
+  &--purple {
+    &,
+    &:link,
+    &:visited {
+      color: v.$color-primary-dark;
+      border: 1px solid v.$color-primary-dark;
+    }
+
+    &:active,
+    &:hover {
+      background-color: v.$color-primary;
+      color: v.$color-white;
+    }
+  }
+
+  &--text {
+    &,
+    &:link,
+    &:visited {
+      border-radius: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 0.5rem 0;
+      transition: all 0.25s;
+      // border-bottom: 1px solid v.$color-white;
+      > span {
+        transition: all 0.25s;
+      }
+    }
+
+    &:active,
+    &:hover {
+      > span {
+        margin-left: 1rem;
+      }
+    }
+
+    &--white {
+      color: v.$color-white;
+      border-bottom: 1px solid v.$color-white;
+
+      &:active,
+      &:hover {
+        color: v.$color-secondary-lightest;
+        border-color: v.$color-secondary-lightest;
+
+        > span {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &--green {
+      color: v.$color-secondary;
+      border-bottom: 1px solid v.$color-secondary;
+
+      &:active,
+      &:hover {
+        color: v.$color-secondary-darkest;
+        border-color: v.$color-secondary-darkest;
+
+        > span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  &--md {
+    &,
+    &:link,
+    &:visited {
+      /* padding: 1rem 1.5rem; */
+      font-size: 3.4rem;
+    }
+  }
+
+  &--lg {
+    &,
+    &:link,
+    &:visited {
+      /* padding: 1rem 1.5rem; */
+      font-size: 4rem;
+    }
+  }
+
+  &--outline {
+    &,
+    &:link,
+    &:visited {
+      padding: 0.5rem 1.5rem;
+      border: 1px solid v.$color-white;
+      color: inherit;
+    }
+  }
+
+}

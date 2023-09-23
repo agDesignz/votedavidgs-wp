@@ -1,0 +1,84 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.footer {
+  min-height: 10rem;
+  color: v.$color-grey-light;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  background: v.$bg-primary-dark;
+
+  &__container {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+
+    &--social {
+      gap: .5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__link {
+
+    &:hover,
+    &:active,
+    &:focus {
+      
+      div {
+        background-color: v.$color-grey-light;
+      }
+
+      h4 {
+        color: v.$color-primary;
+      }
+
+      svg {
+        fill: v.$color-primary;
+      }
+    }
+  }
+
+  &__item {
+    width: 10rem;
+    height: 10rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    border-radius: .3rem;
+    transition: all .3s;
+  }
+
+  &__label {
+    font-family: v.$font-secondary;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: v.$color-grey-light;
+    transition: all .3s;
+  }
+
+
+  &__icon {
+    width: 2.2rem;
+    fill: v.$color-grey-light;
+    transition: all .3s;
+  }
+
+  &__prep-text {
+    font-size: 1.7rem;
+  }
+
+  &__copy-text {
+    text-align: center;
+    font-size: 1.4rem;
+    color: v.$color-grey-light;
+  }
+}

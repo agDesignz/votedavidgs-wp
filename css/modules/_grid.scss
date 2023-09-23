@@ -1,0 +1,161 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-items: start;
+
+  &--1-col {
+    grid-template-columns: 1fr;
+  }
+
+  &--md-2-col {
+    grid-template-columns: repeat(1, 1fr);
+
+    @include m.bp-md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--center {
+    justify-items: center;
+  }
+
+  &--stretch {
+    justify-items: stretch;
+  }
+
+  &--min {
+    grid-auto-rows: min-content;
+  }
+
+  &--gap {
+    gap: v.$gap-sm;
+  }
+
+  &--gap-md {
+    gap: v.$gap-md;
+  }
+
+  &--gap-v {
+    column-gap: v.$gap-sm;
+
+    @include m.bp-md {
+      column-gap: v.$gap-md;
+    }
+  }
+
+  &--gap-h {
+    row-gap: v.$gap-sm;
+
+    @include m.bp-md {
+      row-gap: v.$gap-md;
+    }
+  }
+
+  &--gap-h-lg {
+    row-gap: v.$gap-md;
+
+    @include m.bp-md {
+      row-gap: v.$gap-lg;
+    }
+  }
+
+  &--gap-h-md {
+    row-gap: v.$gap-md;
+  }
+
+  &--section {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: v.$gap-md;
+
+    @include m.bp-md {
+      row-gap: v.$gap-lg;
+    }
+  }
+
+  &--full-height {
+    height: 100%;
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    &--ctr {
+      justify-self: center;
+      align-self: center;
+    }
+
+    &--ctr-v {
+      align-self: center;
+    }
+
+    &--ctr-h {
+      justify-self: center;
+    }
+
+    &--xs-4 {
+      @include m.bp-xs {
+        grid-column: span 4;
+      }
+    }
+
+    &--sm-4 {
+      @include m.bp-sm {
+        grid-column: span 4;
+      }
+    }
+
+    &--sm-6 {
+      @include m.bp-sm {
+        grid-column: span 6;
+      }
+    }
+
+    &--md-3 {
+      @include m.bp-md {
+        grid-column: span 3;
+      }
+    }
+
+    &--md-4 {
+      @include m.bp-md {
+        grid-column: span 4;
+      }
+    }
+
+    &--md-6 {
+      @include m.bp-md {
+        grid-column: span 6;
+      }
+    }
+
+    &--md-8 {
+      @include m.bp-md {
+        grid-column: span 8;
+      }
+    }
+
+    &--lg-3 {
+      @include m.bp-lg {
+        grid-column: span 3;
+      }
+    }
+
+    &--lg-4 {
+      @include m.bp-lg {
+        grid-column: span 4;
+      }
+    }
+
+    &--md-right {
+      @include m.bp-md {
+        grid-column: 7 / span 6;
+      }
+    }
+
+  }
+
+}

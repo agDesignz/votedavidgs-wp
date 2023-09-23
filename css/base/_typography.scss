@@ -1,0 +1,81 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+body {
+  font-family: v.$font-primary;
+  color: v.$color-grey-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h2, h3, h4 {
+  font-weight: 400;
+}
+
+.heading-1 {
+  font-family: v.$font-primary;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include m.bp-sm {
+    font-size: 6rem;
+  }
+
+  @include m.bp-lg {
+    font-size: 8rem;
+  }
+
+}
+
+.heading-2 {
+  font-family: v.$font-primary;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include m.bp-md {
+    font-size: 3.5rem;
+  }
+
+  &--larger {
+    font-size: 4rem;
+
+    @include m.bp-sm {
+      font-size: 5rem;
+    }
+  }
+}
+
+.heading-3 {
+  font-size: 2rem;
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+
+  &--larger {
+    font-size: 3rem;
+  }
+}
+
+p {
+  font-family: v.$font-secondary;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.text-white {
+  color: v.$color-white;
+}
+
+.text-green {
+  color: v.$color-secondary;
+}
+
+.text-purple {
+  color: v.$color-primary;
+}
+
+.text-bold {
+  font-weight: 700;
+}

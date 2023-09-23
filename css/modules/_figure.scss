@@ -1,0 +1,19 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.figure {
+  &--round {
+    border-radius: 1000rem;
+    overflow: hidden;
+  }
+
+  &--300 {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  &--h-150 {
+    height: 15rem;
+  }
+}
+// SET THE IMG WITHIN THE FIGURE TO 'squareImg' or another square dimensions

@@ -1,0 +1,27 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.feature {
+  justify-items: center;
+  text-align: center;
+  grid-template-rows: max-content min-content 1fr auto;
+  gap: 1.2rem;
+
+  &__fig {
+    height: 6rem;
+
+    @include m.bp-md {
+      height: 8rem;
+    }
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    @include m.bp-md {
+      font-size: 3.2rem;
+    }
+  }
+}

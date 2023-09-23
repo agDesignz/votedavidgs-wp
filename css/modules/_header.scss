@@ -1,0 +1,90 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: v.$header-height;
+  // background: linear-gradient(to bottom, rgba(v.$color-primary-dark, .95), rgba(v.$color-primary, .95));
+
+  &__logo {
+    height: 80%;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 0 4%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    @include m.bp-sm {
+      padding: 0 10rem;
+    }
+    &--fixed {
+      position: fixed;
+      height: 6.5rem;
+      z-index: 120;
+      background: linear-gradient(25deg, rgba(v.$color-primary-darkest, .9), rgba(v.$color-primary-dark, .9));
+    }
+  }
+
+  &__nav {
+    display: flex;
+    height: 100%;
+    gap: 1.5rem;
+    align-items: center;
+    @include m.bp-sm {
+      gap: v.$gap-nav;
+    }
+    @include m.bp-lg {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__soc {
+
+  }
+
+  &__icon {
+    width: 4rem;
+    fill: v.$color-white;
+
+    &:hover {
+      fill: v.$color-secondary-lightest;
+    }
+  }
+
+  &__donate-box {
+    &,
+    &:link,
+    &:visited {
+      font-size: 2.4rem;
+      background: v.$color-secondary-light;
+      color: v.$color-white;
+      align-self: stretch;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+      @include m.bp-sm {
+        font-size: 3.4rem;
+      }
+    }
+
+    &:active,
+    &:hover {
+      /* color: v.$color-primary; */
+      background: v.$color-secondary-lightest;
+    }
+  }
+}
+
+.page--home .header {
+  background: linear-gradient(to bottom, rgba(v.$color-primary-dark, .95), rgba(v.$color-primary, .95));
+  position: relative;
+}

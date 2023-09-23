@@ -1,0 +1,143 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.navigation {
+  height: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 10rem;
+  line-height: 1;
+
+
+
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    z-index: 125;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    @include m.bp-nav {
+      display: none;
+    }
+  }
+
+  &__background {
+    position: fixed;
+    z-index: 100;
+    background-color: v.$color-grey-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    top: 0;
+    height: 100vh;
+
+    transition: all .3s;
+    width: 0;
+    opacity: 0;
+
+    @include m.bp-nav {
+      transition: none;
+      position: relative;
+      height: 100%;
+      width: auto;
+      top: auto;
+      right: auto;
+      background: none;
+      opacity: 1;
+    }
+  }
+
+  &__nav {
+    width: 0;
+
+    @include m.bp-nav {
+      width: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+
+
+  /***** FUNCTIONALITY *****/
+
+  &__checkbox:checked~&__background {
+    width: 100%;
+    opacity: 1;
+  }
+
+  &__checkbox:checked~&__background &__nav {
+    width: auto;
+  }
+
+  &__checkbox:checked+&__button {
+    transform: rotateY(180deg);
+    margin-right: 1.3rem;
+  }
+
+  &__checkbox:checked+&__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked+&__button &__icon::before {
+    top: 0;
+    transform: rotate(45deg);
+    background-color: v.$color-primary-dark;
+  }
+
+  &__checkbox:checked+&__button &__icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background-color: v.$color-primary-dark;
+  }
+
+  /***** ICON *****/
+
+  &__icon {
+    position: absolute;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      z-index: 500;
+      border-radius: 2px;
+      background-color: v.$color-grey-light;
+      transition: transform 0.3s;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+
+    &::after {
+      top: 1rem;
+    }
+  }
+
+  &__button:hover {
+    transform: scale(1.2);
+  }
+}

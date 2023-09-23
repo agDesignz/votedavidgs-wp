@@ -1,0 +1,73 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: v.$gap-nav;
+  list-style: none;
+  text-align: center;
+  @include m.bp-nav {
+    flex-direction: row;
+    height: 100%;
+  }
+
+  & li {
+    display: flex;
+    position: relative;
+  }
+
+  & a {
+    &,
+    &:link,
+    &:visited {
+      display: inline-block;
+      letter-spacing: 1.2px;
+      font-size: 3rem;
+      padding: 1.2rem;
+      width: 100%;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: v.$color-primary;
+      transition: all 0.3s;
+      &:hover,
+      &:active {
+        background: v.$color-primary;
+        color: v.$color-white;
+      }
+      @include m.bp-nav {
+        color: v.$color-white;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+
+
+        &:hover,
+        &:active {
+          background: v.$color-white;
+          color: v.$color-primary;
+        }
+      }
+    }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   height: 2px;
+    //   width: 100%;
+    //   background-color: v.$color-primary;
+    //   transform: scaleX(0);
+    //   transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+    //   @include m.bp-nav {
+    //     background-color: v.$color-white;
+    //   }
+    // }
+
+    // &--active::after,
+    // &:hover::after {
+    //   transform: scaleX(1);
+    // }
+  }
+}

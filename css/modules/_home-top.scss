@@ -1,0 +1,80 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.home-top {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  @include m.bp-sm {
+    height: auto;
+   }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto;
+    height: 100%;
+
+    @include m.bp-sm {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1.5rem 0;
+    color: v.$color-white;
+    background: v.$bg-secondary;
+
+    @include m.bp-sm {
+     grid-column: 1 / span 1;
+     grid-row: 1 / span 1;
+     align-items: center;
+
+    }
+  }
+
+  &__heading {
+    max-width: 75%;
+    text-transform: uppercase;
+    font-size: 3rem;
+    // font-weight: 600;
+    // font-family: v.$font-secondary;
+    letter-spacing: .2rem;
+
+    @include m.bp-md {
+      font-size: 4rem;
+    }
+
+    @include m.bp-lg {
+      font-size: 6rem;
+    }
+  }
+
+  &__portrait {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background-size: cover;
+
+    @include m.bp-sm {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      background: v.$color-secondary-dark;
+     }
+  }
+
+  &__fig {
+    width: 100%;
+    height:100%;
+
+    @include m.bp-sm {
+      display: block;
+     }
+  }
+}

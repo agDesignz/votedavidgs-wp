@@ -1,0 +1,112 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.banner-horizon {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 6.5rem auto;
+  row-gap: 2rem;
+  @include m.bp-md {
+    grid-template-rows: 8.5rem repeat(3, 1fr);
+  }
+
+  &__background {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    box-shadow: v.$shadow-light;
+    background: v.$bg-primary-dark;
+    @include m.bp-md {
+      grid-row: 1 / span 3;
+    }
+  }
+
+  &__content {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    color: v.$color-white;
+    width: 100%;
+    overflow: hidden;
+    @include m.bp-md {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 75rem;
+      height: 30rem;
+      overflow: visible;
+    }
+  }
+
+  &__photo-bg {
+    display: none;
+
+    @include m.bp-md {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(v.$color-primary-dark, .7), rgba(v.$color-primary-dark, .7) );
+    }
+  }
+
+  &__filter {
+    display: none;
+    @include m.bp-md {
+      display: inline-block;
+      position: absolute;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(v.$color-grey-dark, .2), rgba(v.$color-primary-dark, .65) 60%);
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem 2.5rem;
+    align-content: end;
+    text-align: center;
+
+    @include m.bp-sm {
+      align-content: center;
+    }
+    @include m.bp-md {
+      z-index: 75;
+      padding: 1.5rem 8rem;
+      grid-column: 2 / -1;
+      grid-row: 1 / span 2;
+      text-align: left;
+    }
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    @include m.bp-sm {
+      font-size: 3.5rem;
+    }
+    @include m.bp-md {
+      font-size: 4.5rem;
+    }
+  }
+
+  &__subheading {
+    @include m.bp-sm {
+      font-size: 2.5rem;
+      line-height: 1.25;
+
+    }
+    @include m.bp-md {
+      // font-size: 2.7rem;
+      letter-spacing: 0.5px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.content-box {
+  width: v.$full-width;
+  display: grid;
+  gap: v.$gap-sm;
+  margin: auto;
+  justify-items: start;
+
+  &--full {
+    width: 100%;
+  }
+
+  &--narrow {
+    max-width: 75rem;
+
+    &--half {
+
+      @include m.bp-md {
+        max-width: 40rem;
+      }
+    }
+  }
+
+  &--md-70 {
+    @include m.bp-md {
+      width: 70%;
+    }
+  }
+}
