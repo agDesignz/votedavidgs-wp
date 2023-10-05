@@ -42,7 +42,15 @@ a {
   &:link,
   &:visited {
     text-decoration: none;
+    font-family: v.$font-primary;
+    font-weight: 500;
+    color: v.$color-secondary-dark;
     display: inline-block;
+  }
+
+  &:hover,
+  &:active {
+    color: v.$color-secondary-light;
   }
 }
 

@@ -2,11 +2,13 @@
 @use "../base/mixins"as m;
 
 .feature {
+  position: relative;
   justify-items: center;
   text-align: center;
-  grid-template-rows: max-content min-content 1fr auto;
+  grid-template-rows:  max-content min-content 1fr auto;
   gap: 1.2rem;
-
+  overflow: hidden;
+  border-radius: 2px;
 
     &__heading {
       font-size: 2.4rem;
@@ -30,4 +32,33 @@
     width: auto;
   }
 
+  &__link {
+    &,
+    &:link,
+    &:visited {
+
+      height: 100%;
+      bottom: 0;
+      display: grid;
+      grid-template-rows: 1fr;
+      align-items: center;
+      justify-items: center;
+      background-color: v.$color-white;
+      padding: 1rem;
+      transition: all .35s;
+
+      @include m.bp-md {
+        position: absolute;
+        width: 100%;
+
+        transform: translateY(102%);
+      }
+    }
+  }
+
+  @include m.bp-md {
+    &:hover > &__link {
+      transform: translateY(0);
+    }
+  }
 }

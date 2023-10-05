@@ -39,7 +39,9 @@ home_hero();
           </figure>
           <h3 class="feature__heading heading-3">Community</h3>
           <p class="feature__text">Restore the voice of our neighborhoods</p>
-          <a href="<?php echo esc_url(site_url('/visons/community-voice')); ?>" class="btn btn--text btn--text--white">Learn More <span>&#8640;</span></a>
+          <a href="<?php echo esc_url(site_url('/visons/community-voice')); ?>" class="feature__link">
+            <h3 class="text-purple btn">Learn More</h3>
+          </a>
         </div>
 
         <div class="feature grid grid--center grid--1-col grid__item grid__item--sm-6 grid__item--lg-3">
@@ -48,7 +50,9 @@ home_hero();
           </figure>
           <h3 class="feature__heading heading-3">Public Finance</h3>
           <p class="feature__text">Balance the budget responsibly</p>
-          <a href="<?php echo esc_url(site_url('/visons/budget')); ?>" class="btn btn--text btn--text--white">Learn More <span>&#8640;</span></a>
+          <a href="<?php echo esc_url(site_url('/visons/community-voice')); ?>" class="feature__link">
+            <h3 class="text-purple btn">Learn More</h3>
+          </a>
         </div>
 
         <div class="feature grid grid--center grid--1-col grid__item grid__item--sm-6 grid__item--lg-3">
@@ -57,8 +61,9 @@ home_hero();
           </figure>
           <h3 class="feature__heading heading-3">Services</h3>
           <p class="feature__text">Promote affordable housing, strong public schools, and a healthy environment</p>
-          <a href="<?php echo esc_url(site_url('/visons/services')); ?>" class="btn btn--text btn--text--white">Learn More <span>&#8640;</span></a>
-        </div>
+          <a href="<?php echo esc_url(site_url('/visons/community-voice')); ?>" class="feature__link">
+            <h3 class="text-purple btn">Learn More</h3>
+          </a>        </div>
 
         <div class="feature grid grid--center grid--1-col grid__item grid__item--sm-6 grid__item--lg-3">
           <figure class="feature__fig">
@@ -66,8 +71,9 @@ home_hero();
           </figure>
           <h3 class="feature__heading heading-3">Diversity</h3>
           <p class="feature__text">Elect St. Paul's first Latino Councilmember</p>
-          <a href="<?php echo esc_url(site_url('/visons/diversity')); ?>" class="btn btn--text btn--text--white">Learn More <span>&#8640;</span></a>
-        </div>
+          <a href="<?php echo esc_url(site_url('/visons/community-voice')); ?>" class="feature__link">
+            <h3 class="text-purple btn">Learn More</h3>
+          </a>        </div>
 
       </div>
     </div>

@@ -17,6 +17,13 @@
   </div>
 </section>
 
+<section class="about-news page-section page-section--bottom-padding">
+  <div class="content-box content-box--narrow">
+    <p>I've been an active community member, and have contributed to many policy debates. Here are some examples:</p>
+    <?php the_field('page_text_1') ?>
+  </div>
+</section>
+
 <?php } wp_reset_postdata();
    ?>
 

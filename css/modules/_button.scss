@@ -154,6 +154,21 @@
         }
       }
     }
+
+    &--purple {
+      color: v.$color-primary;
+      border-bottom: 1px solid v.$color-primary;
+
+      &:active,
+      &:hover {
+        color: v.$color-primary-darkest;
+        border-color: v.$color-primary-darkest;
+
+        > span {
+          margin-left: 1rem;
+        }
+      }
+    }
   }
 
   &--md {
