@@ -20,12 +20,14 @@
   </div>
 </section>
 
-<section class="page-section background--green">
+<section class="page-section background--green" id="donate">
   <div class="wrapper">
     <div class="grid grid--1-col grid--gap-h-md">
       <div class="content-box content-box--narrow grid--center">
-        <a href="https://secure.actblue.com/donate/votedavidgs" class="btn btn--outline btn--lg">DONATE</a>
-        <h3 class="heading-3">Your contributions make a real difference and are much appreciated</h3>
+        <a href="https://secure.actblue.com/donate/votedavidgs" class="btn btn--outline btn--lg">DONATE ONLINE</a>
+        <h3 class="heading-3 u-text-center">Your contributions make a real difference and are much appreciated</h3>
+        <p class="u-text-center">To donate by check,<br>please mail donations to:<br>
+        <i>1023 Como Ave, St. Paul MN 55103</i><br>and address them to<br><i>Neighbors for Greenwood-Sanchez</i>.<br>Thank you kindly!</p>
       </div>
     </div>
   </div>
@@ -60,6 +62,16 @@
           <?php the_field('page_text_2') ?>
           <a href="mailto:votedavidgs@gmail.com" class="btn btn--text btn--text--white">GET IN TOUCH <span>&#8640;</span></a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="wrapper">
+    <div class="grid grid--1-col grid--gap-h-md">
+      <div class="content-box content-box--narrow grid--cente">
+        <?php contactForm(); ?>
       </div>
     </div>
   </div>

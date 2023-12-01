@@ -3,6 +3,7 @@
 require get_theme_file_path('/inc/page-banner.php');
 require get_theme_file_path('/inc/banner-horizon.php');
 require get_theme_file_path('/inc/banner-simple.php');
+require get_theme_file_path('/inc/contact-form.php');
 require get_theme_file_path('/inc/home-hero.php');
 require get_theme_file_path('/inc/post-box.php');
 require get_theme_file_path('/inc/vision-priority.php');
@@ -34,3 +35,17 @@ $classes[] = $post->post_type . '--' . $post->post_name;
 return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+// Send email via SMTP
+// add_action( 'phpmailer_init', 'contact_form_mail' );
+// function contact_form_mail( $phpmailer ) {
+//     $phpmailer->isSMTP();
+//     $phpmailer->Host = SMTP_HOST;
+//     $phpmailer->SMTPAuth = SMTP_AUTH;
+//     $phpmailer->Port = SMTP_PORT;
+//     $phpmailer->Username = SMTP_USER;
+//     $phpmailer->Password = SMTP_PASS;
+//     $phpmailer->SMTPSecure = SMTP_SECURE;
+//     $phpmailer->From = SMTP_FROM;
+//     $phpmailer->FromName = SMTP_NAME;
+// }

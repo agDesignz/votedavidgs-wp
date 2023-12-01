@@ -3,16 +3,14 @@
 
   while(have_posts()) {
     the_post();
-    display_page_banner();
+    banner_horizon();
 ?>
 
 <section class="about-intro page-section page-section--top-padding">
   <div class="content-box content-box--narrow">
-    <?php
-      $current_page = get_queried_object();
-      $content      = apply_filters( 'the_content', $current_page->post_content );
-      echo $content;
-    ?>
+      <h3 class="heading-3 heading-3--larger text-green">
+      David is running a truly grassroots campaign with the support of community leaders including:
+      </h3>
   </div>
 </section>
 
@@ -47,6 +45,20 @@
       <?php }wp_reset_postdata(); ?>
 
     </div>
+  </div>
+</section>
+
+<section class="page-section page-section--bottom-padding">
+  <div class="content-box content-box--narrow">
+    <h3 class="heading-3 heading-3--larger text-green">
+    David is also endorsed by:
+        </h3>
+    <p>
+    Saint Paul Heritage Preservation Political Committee
+    </p>
+    <p>
+    Service St. Paul
+    </p>
   </div>
 </section>
 
