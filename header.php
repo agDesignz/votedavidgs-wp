@@ -38,7 +38,7 @@
   wp_nav_menu([
     'theme_location' => 'headerMenuLocation',
     // 'menu_class' => 'navigation__list',
-    'container' => 'null'
+    // 'container' => 'null'
   ]);
 ?>
                 <!-- <ul class="navigation__list">

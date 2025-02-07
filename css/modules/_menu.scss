@@ -1,15 +1,18 @@
-@use "../base/variables"as v;
-@use "../base/mixins"as m;
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
 
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: v.$gap-nav;
-  list-style: none;
-  text-align: center;
-  @include m.bp-nav {
-    flex-direction: row;
-    height: 100%;
+  height: 100%;
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-nav;
+    list-style: none;
+    text-align: center;
+    @include m.bp-nav {
+      flex-direction: row;
+      height: 100%;
+    }
   }
 
   & li {
@@ -40,7 +43,6 @@
         font-size: 2rem;
         display: flex;
         align-items: center;
-
 
         &:hover,
         &:active {
